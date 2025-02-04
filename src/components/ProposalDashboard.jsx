@@ -72,7 +72,7 @@ const ProposalDashboard = () => {
       role: 'Data Engineer',
       icon: <Database className="w-6 h-6 text-green-500" />,
       skills: ['Data Pipeline', 'ETL Processes', 'Big Data'],
-      experience: '3+ years'
+      experience:
     },
     {
       role: 'Security Specialist',
