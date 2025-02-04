@@ -61,13 +61,12 @@ const ProposalDashboard = () => {
       role: 'AI/ML Engineer',
       icon: <Cpu className="w-6 h-6 text-purple-500" />,
       skills: ['Machine Learning', 'Neural Networks', 'Computer Vision'],
-      experience: '5+ years'
     },
     {
       role: 'Software Developer',
       icon: <Code className="w-6 h-6 text-blue-500" />,
       skills: ['Full Stack Development', 'API Design', 'Cloud Services'],
-      experience: '4+ years'
+      '
     },
     {
       role: 'Data Engineer',
@@ -79,7 +78,6 @@ const ProposalDashboard = () => {
       role: 'Security Specialist',
       icon: <Shield className="w-6 h-6 text-red-500" />,
       skills: ['Cybersecurity', 'Network Security', 'Risk Assessment'],
-      experience: '5+ years'
     }
   ];
 
