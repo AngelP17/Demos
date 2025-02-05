@@ -1,8 +1,8 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Wrench, Settings, Cpu, BarChart2, Code, Database, Shield } from 'lucide-react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Wrench, Settings, Cpu, BarChart2, User, Code, Database, Shield } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './Card';
 
 const ProposalDashboard = () => {
   const efficiencyData = [
@@ -35,6 +35,27 @@ const ProposalDashboard = () => {
     }
   ];
 
+  const keyBenefits = [
+    {
+      category: 'Operational',
+      benefits: [
+        { metric: 'Quality Control Improvement', value: '40%' },
+        { metric: 'Downtime Reduction', value: '25%' },
+        { metric: 'Resource Utilization Increase', value: '20%' },
+        { metric: 'Maintenance Cost Reduction', value: '30%' }
+      ]
+    },
+    {
+      category: 'Financial',
+      benefits: [
+        { metric: 'ROI Expected', value: '200%' },
+        { metric: 'Cost Savings (Annual)', value: '$500K' },
+        { metric: 'Productivity Gain', value: '35%' },
+        { metric: 'Energy Efficiency', value: '25%' }
+      ]
+    }
+  ];
+
   const requiredProfessionals = [
     {
       role: 'AI/ML Engineer',
@@ -58,27 +79,6 @@ const ProposalDashboard = () => {
     }
   ];
 
-  const keyBenefits = [
-    {
-      category: 'Operational',
-      benefits: [
-        { metric: 'Quality Control Improvement', value: '40%' },
-        { metric: 'Downtime Reduction', value: '25%' },
-        { metric: 'Resource Utilization Increase', value: '20%' },
-        { metric: 'Maintenance Cost Reduction', value: '30%' }
-      ]
-    },
-    {
-      category: 'Financial',
-      benefits: [
-        { metric: 'ROI Expected', value: '200%' },
-        { metric: 'Cost Savings (Annual)', value: '$500K' },
-        { metric: 'Productivity Gain', value: '35%' },
-        { metric: 'Energy Efficiency', value: '25%' }
-      ]
-    }
-  ];
-
   return (
     <div className="w-full space-y-8">
       <Card>
@@ -97,31 +97,6 @@ const ProposalDashboard = () => {
               <TabsTrigger value="professionals">Required Professionals</TabsTrigger>
             </TabsList>
             
-            <TabsContent value="professionals">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {requiredProfessionals.map((professional, idx) => (
-                  <Card key={idx} className="border">
-                    <CardHeader>
-                      <div className="flex items-center space-x-3">
-                        {professional.icon}
-                        <CardTitle className="text-lg">{professional.role}</CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div>
-                        <p className="text-sm font-medium text-gray-500 mb-2">Key Skills</p>
-                        <ul className="space-y-1">
-                          {professional.skills.map((skill, index) => (
-                            <li key={index} className="text-sm text-gray-700">• {skill}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-
             <TabsContent value="efficiency">
               <div className="h-96">
                 <ResponsiveContainer width="100%" height="100%">
@@ -180,6 +155,37 @@ const ProposalDashboard = () => {
                 ))}
               </div>
             </TabsContent>
+
+            <TabsContent value="professionals">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {requiredProfessionals.map((professional, idx) => (
+                  <Card key={idx} className="border">
+                    <CardHeader>
+                      <div className="flex items-center space-x-3">
+                        {professional.icon}
+                        <CardTitle className="text-lg">{professional.role}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-sm font-medium text-gray-500">Required Experience</p>
+                          <p className="text-blue-600 font-semibold">{professional.experience}</p>
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-gray-500 mb-2">Key Skills</p>
+                          <ul className="space-y-1">
+                            {professional.skills.map((skill, index) => (
+                              <li key={index} className="text-sm text-gray-700">• {skill}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
           </Tabs>
         </CardContent>
       </Card>
@@ -228,7 +234,7 @@ const ProposalDashboard = () => {
               </CardContent>
             </Card>
           </div>
-        </CardContent>
+        </CardContent> {/* Fixed the closing tag here */}
       </Card>
     </div>
   );
