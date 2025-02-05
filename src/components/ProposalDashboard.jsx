@@ -60,26 +60,22 @@ const ProposalDashboard = () => {
     {
       role: 'AI/ML Engineer',
       icon: <Cpu className="w-6 h-6 text-purple-500" />,
-      skills: ['Machine Learning', 'Neural Networks', 'Computer Vision'],
-      experience: '5+ years'
+      skills: ['Machine Learning', 'Neural Networks', 'Computer Vision']
     },
     {
       role: 'Software Developer',
       icon: <Code className="w-6 h-6 text-blue-500" />,
-      skills: ['Full Stack Development', 'API Design', 'Cloud Services'],
-      experience: '4+ years'
+      skills: ['Full Stack Development', 'API Design', 'Cloud Services']
     },
     {
       role: 'Data Engineer',
       icon: <Database className="w-6 h-6 text-green-500" />,
-      skills: ['Data Pipeline', 'ETL Processes', 'Big Data'],
-      experience: '3+ years'
+      skills: ['Data Pipeline', 'ETL Processes', 'Big Data']
     },
     {
       role: 'Security Specialist',
       icon: <Shield className="w-6 h-6 text-red-500" />,
-      skills: ['Cybersecurity', 'Network Security', 'Risk Assessment'],
-      experience: '5+ years'
+      skills: ['Cybersecurity', 'Network Security', 'Risk Assessment']
     }
   ];
 
